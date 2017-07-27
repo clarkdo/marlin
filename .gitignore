@@ -163,7 +163,7 @@ fabric.properties
 .idea/sonarlint
 
 ### SQLite3 ###
-/sqlite3
+sqlite3
 
 # End of https://www.gitignore.io/api/node,webstorm,sublimetext,visualstudiocode
 
