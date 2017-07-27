@@ -2,7 +2,15 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   env: {
-    node: true,
+    node: true
   },
-  extends: 'standard'
+  extends: 'standard',
+  plugins: [
+    "flowtype"
+  ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
 }
