@@ -14,4 +14,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use(convert(cors({ credentials: true })))
 app.use(bodyParser())
 
+// Custom API modules that define their own routes.
+const modules = require('./modules')
+modules(app)
+
 export default app
