@@ -1,4 +1,6 @@
 [ignore]
+<PROJECT_ROOT>/node_modules/express-graphql
+<PROJECT_ROOT>/coverage
 
 [include]
 

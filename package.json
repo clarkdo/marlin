@@ -38,6 +38,10 @@
     "start": "node src/index",
     "start:dev": "nodemon src/index",
     "lint": "eslint --ext .js .",
+    "test:unit": "jest src/",
+    "test:integration": "jest --runInBand --forceExit tests/",
+    "test": "jest --runInBand --forceExit ",
+    "test:coverage": "jest --runInBand --forceExit --coverage",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
     "migrate:rollback": "knex migrate:rollback",
@@ -52,6 +56,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
     "eslint": "^4.2.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-flowtype": "^2.35.0",
@@ -62,8 +67,18 @@
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.51.0",
     "husky": "^0.13.4",
+    "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/coverage",
+      "<rootDir>/flow-typed",
+      "<rootDir>/knex"
+    ],
+    "testEnvironment": "node"
   },
   "now": {
     "engines": {
