@@ -1,8 +1,9 @@
 // @flow
 
 import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql'
+import type { GraphQLFieldConfig } from 'graphql'
 
-const UserType = {
+const UserType: GraphQLFieldConfig<any, any> = {
   name: 'User',
   type: new GraphQLObjectType({
     name: 'UserType',
@@ -20,7 +21,7 @@ const UserType = {
       type: GraphQLString
     }
   },
-  async resolve (root: Object, args: Object, { loader }: Object): Object {
+  resolve (root: Object, args: Object, { loader }: Object): Object {
     if (args.id) {
       return loader.users.load(args.id)
     }
@@ -28,7 +29,7 @@ const UserType = {
   }
 }
 
-const UsersType = {
+const UsersType: GraphQLFieldConfig<any, any> = {
   name: 'Users',
   type: new GraphQLList(UserType.type),
   args: {
@@ -36,7 +37,7 @@ const UsersType = {
       type: new GraphQLList(GraphQLString)
     }
   },
-  async resolve (root: Object, args: Object, { loader }: Object): Object {
+  resolve (root: Object, args: Object, { loader }: Object): Array<Object> {
     if (args.ids) {
       return loader.users.loadMany(args.ids)
     }
