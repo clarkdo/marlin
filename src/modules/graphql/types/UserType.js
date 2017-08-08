@@ -1,7 +1,7 @@
 // @flow
 
 import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql'
-import User from '../../../models/User'
+
 const UserType = {
   name: 'User',
   type: new GraphQLObjectType({
@@ -21,13 +21,13 @@ const UserType = {
     }
   },
   async resolve (root: Object, args: Object, { loader }: Object): Object {
-    let user: User | Error
     if (args.id) {
-      user = await User.findOne({id: args.id})
+      return loader.users.load(args.id)
     }
-    return user
+    return {}
   }
 }
+
 const UsersType = {
   name: 'Users',
   type: new GraphQLList(UserType.type),
@@ -37,11 +37,11 @@ const UsersType = {
     }
   },
   async resolve (root: Object, args: Object, { loader }: Object): Object {
-    let users: Array<User | Error>
     if (args.ids) {
-      users = await User.findByIds(args.ids)
+      return loader.users.loadMany(args.ids)
     }
-    return users
+    return []
   }
 }
+
 export { UserType as User, UsersType as Users, UsersType as default }
