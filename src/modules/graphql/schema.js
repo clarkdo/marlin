@@ -1,15 +1,13 @@
 // @flow
 
 import { GraphQLSchema, GraphQLObjectType } from 'graphql'
-// import {
-//   connectionArgs,
-//   connectionDefinitions,
-//   connectionFromPromisedArray
-// } from 'graphql-relay'
+import UserType from './types/UserType'
 
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Query',
-    fields: {}
+    fields: {
+      user: UserType
+    }
   })
 })
