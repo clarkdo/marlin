@@ -1,8 +1,8 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLString } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql'
 import User from '../../../models/User'
-export default ({
+const UserType = {
   name: 'User',
   type: new GraphQLObjectType({
     name: 'UserType',
@@ -27,4 +27,21 @@ export default ({
     }
     return user
   }
-})
+}
+const UsersType = {
+  name: 'Users',
+  type: new GraphQLList(UserType.type),
+  args: {
+    ids: {
+      type: new GraphQLList(GraphQLString)
+    }
+  },
+  async resolve (root: Object, args: Object, { loader }: Object): Object {
+    let users: Array<User | Error>
+    if (args.ids) {
+      users = await User.findByIds(args.ids)
+    }
+    return users
+  }
+}
+export { UserType as User, UsersType as Users, UsersType as default }

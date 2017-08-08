@@ -1,13 +1,14 @@
 // @flow
 
 import { GraphQLSchema, GraphQLObjectType } from 'graphql'
-import UserType from './types/UserType'
+import {User, Users} from './types/UserType'
 
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Query',
     fields: {
-      user: UserType
+      user: User,
+      users: Users
     }
   })
 })
