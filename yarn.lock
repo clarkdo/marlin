@@ -864,6 +864,14 @@ chalk@^2.0.0:
     escape-string-regexp "^1.0.5"
     supports-color "^4.0.0"
 
+chalk@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.1.0.tgz#ac5becf14fa21b99c6c92ca7a7d7cfd5b17e743e"
+  dependencies:
+    ansi-styles "^3.1.0"
+    escape-string-regexp "^1.0.5"
+    supports-color "^4.0.0"
+
 chokidar@^1.4.3:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
@@ -1497,13 +1505,6 @@ extglob@^0.3.1:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
-
-fancy-log@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.3.0.tgz#45be17d02bb9917d60ccffd4995c999e6c8c9948"
-  dependencies:
-    chalk "^1.1.1"
-    time-stamp "^1.0.0"
 
 fast-deep-equal@^1.0.0:
   version "1.0.0"
@@ -4116,10 +4117,6 @@ tildify@~1.0.0:
   resolved "https://registry.yarnpkg.com/tildify/-/tildify-1.0.0.tgz#2a021db5e8fbde0a8f8b4df37adaa8fb1d39d7dd"
   dependencies:
     user-home "^1.0.0"
-
-time-stamp@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-1.1.0.tgz#764a5a11af50561921b133f3b44e618687e0f5c3"
 
 timed-out@^2.0.0:
   version "2.0.0"
