@@ -1,6 +1,5 @@
 // @flow
 
-import { sign } from 'jsonwebtoken'
 import pick from 'ramda/src/pick'
 import db from '../db'
 
@@ -14,12 +13,6 @@ class User {
   constructor (props: Object) {
     // Whitelist fields.
     Object.assign(this, pick(fields, props))
-  }
-
-  token (): string {
-    return sign(this, process.env.APP_SECRET, {
-      expiresIn: 60 * 60 * 2 /* hours */
-    })
   }
 
   static async find (...args) {
