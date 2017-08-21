@@ -6,7 +6,9 @@ language: node_js
 node_js:
   - '8'
 install:
+  - yarn global add codecov
   - yarn
 script:
   - yarn lint
   - yarn test:coverage
+  - codecov
