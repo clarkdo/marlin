@@ -47,9 +47,9 @@ class User {
         db
           .table('users')
           .where(...(args.length ? args : [{}]))
-          .select(db.raw('1'))
+          .select(db.raw('1')).as('exists')
       )
-      .then(x => x.rows[0].exists)
+      .then(rows => rows[0].exists)
   }
 
   static create (user) {
