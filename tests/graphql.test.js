@@ -2,15 +2,8 @@
 
 import request from 'supertest'
 import server from '../src/server'
-import { setupDatabase } from './utils'
 
 const check = done => (err, res) => (err ? done.fail(err) : done())
-
-beforeAll(async () => {
-  await setupDatabase()
-  // TODO: should really set the request to pre-authorized state, and have tests
-  // use them instead
-})
 
 describe('POST /graphql', () => {
   test('should return 200 when asked for /schema', done => {

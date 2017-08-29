@@ -8,6 +8,9 @@ node_js:
 install:
   - yarn global add codecov
   - yarn
+before_script:
+  - yarn migrate:latest
+  - yarn seed:run
 script:
   - yarn lint
   - yarn test:coverage
