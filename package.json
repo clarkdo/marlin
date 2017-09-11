@@ -66,7 +66,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.53.1",
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
+    "jest": "^21.0.2",
     "lint-staged": "^4.0.4",
     "nodemon": "^1.11.0",
     "supertest": "^3.0.0"
