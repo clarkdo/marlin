@@ -54,7 +54,7 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
     "eslint": "^4.5.0",
     "eslint-config-standard": "^10.2.1",
@@ -64,7 +64,7 @@
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.54.1",
+    "flow-bin": "^0.55.0",
     "husky": "^0.14.3",
     "jest": "^21.0.2",
     "lint-staged": "^4.0.4",
