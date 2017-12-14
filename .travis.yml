@@ -6,7 +6,6 @@ language: node_js
 node_js:
   - '8'
 install:
-  - yarn global add codecov
   - yarn
 before_script:
   - yarn migrate:latest
@@ -14,4 +13,3 @@ before_script:
 script:
   - yarn lint
   - yarn test:coverage
-  - codecov
