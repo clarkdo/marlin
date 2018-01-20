@@ -12,4 +12,3 @@ esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 suppress_comment=.*\\$FlowFixMe
 suppress_comment=.*\\$FlowIgnoreNextLine
-unsafe.enable_getters_and_setters=true

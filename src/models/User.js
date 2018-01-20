@@ -15,7 +15,7 @@ class User {
     Object.assign(this, pick(fields, props))
   }
 
-  static async find (...args) {
+  static async find (...args: Array<User | Object>) {
     return db
       .table('users')
       .where(...(args.length ? args : [{}]))
@@ -32,7 +32,7 @@ class User {
     )
   }
 
-  static async findOne (...args): Promise<User> {
+  static async findOne (...args: Array<User | Object>): Promise<User> {
     return db
       .table('users')
       .where(...(args.length ? args : [{}]))
@@ -40,7 +40,7 @@ class User {
       .then(x => x && new User(x))
   }
 
-  static async any (...args): Promise<boolean> {
+  static async any (...args: Array<User | Object>): Promise<boolean> {
     return db
       .raw(
         'SELECT EXISTS ?',
@@ -52,7 +52,7 @@ class User {
       .then(rows => rows[0].exists)
   }
 
-  static create (user) {
+  static create (user: User) {
     return db.table('users').insert(user, fields).then(x => new User(x[0]))
   }
 }
