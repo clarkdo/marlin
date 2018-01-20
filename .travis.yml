@@ -12,4 +12,5 @@ before_script:
   - yarn seed:run
 script:
   - yarn lint
+  - yarn flow
   - yarn test:coverage
