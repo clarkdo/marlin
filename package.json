@@ -55,8 +55,8 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "babel-jest": "^21.2.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
     "eslint": "^4.13.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-flowtype": "^2.40.0",
@@ -67,7 +67,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.61.0",
     "husky": "^0.14.3",
-    "jest": "^21.0.2",
+    "jest": "^22.1.1",
     "lint-staged": "^5.0.0",
     "nodemon": "^1.14.3",
     "supertest": "^3.0.0"
