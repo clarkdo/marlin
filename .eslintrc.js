@@ -5,6 +5,9 @@ module.exports = {
     node: true,
     "jest/globals": true
   },
+  "globals": {
+   "$ReadOnlyArray": true,
+  },
   extends: 'standard',
   plugins: [
     "flowtype",

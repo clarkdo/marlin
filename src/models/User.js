@@ -23,7 +23,7 @@ class User {
       .then(rows => rows.map(x => new User(x)))
   }
 
-  static async findByIds (ids: string[]): Promise<Array<User | Error>> {
+  static async findByIds (ids: $ReadOnlyArray<string>): Promise<Array<User | Error>> {
     return db.table('users').whereIn('id', ids).then(rows =>
       ids.map(id => {
         const row = rows.find(x => x.id === id)

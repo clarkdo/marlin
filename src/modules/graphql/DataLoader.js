@@ -17,6 +17,6 @@ import User from '../../models/User'
  */
 export default {
   create: () => ({
-    users: new DataLoader(keys => User.findByIds(keys))
+    users: new DataLoader((keys: $ReadOnlyArray<string>) => User.findByIds(keys))
   })
 }
