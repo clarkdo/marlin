@@ -15,7 +15,9 @@ exports = module.exports = function initModules (app: any) {
 
       const routes = router.default
       const baseUrl = router.baseUrl
-      const instance = new Router({ prefix: baseUrl })
+      const instance: {
+        [string]: Function
+      } = new Router({ prefix: baseUrl })
 
       routes.forEach(config => {
         const { method = '', route = '', handlers = [] } = config
